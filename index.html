@@ -3,50 +3,123 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
   </head>
   <body>
-    <script>
+    <div id="container">
+      <h1>TWITTLER<i class="fa fa-paper-plane-o" aria-hidden="true"></i></h1>
+      <div class="tweet-box">
+        <div class="box pic">
+          <img src="https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth">
+        </div>
 
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
+        <div class="box txt">
+          <div class="name-date">name<span>date</span></div>
+          <div class="tweet">Lorem ipsum dolor sit amet,sdfsdfdfsdfsdfdsfsf ddddddddddd.</div>
+        </div>
+      </div>
 
-        var renderTweet = function(tweet){
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message + 'sent:' + tweet.created_at);
-          $tweet.appendTo($body);
-        };
+      <div class="tweet-box">
+        <div class="box pic">
+          <img src="https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth">
+        </div>
 
-        var loadTweets = function(tweets){
-          var index = tweets.length - 1;
-          var currentLength = tweets.length;
+        <div class="box txt">
+          <div class="name-date">name<span>date</span></div>
+          <div class="tweet">Lorem ipsum dolor sit amet,sdfsdfdfsdfsdfdsfsf ddddddddddd.</div>
+        </div>
+      </div>
+            <div class="tweet-box">
+        <div class="box pic">
+          <img src="https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth">
+        </div>
 
-          while(index >=0) {
-            var tweet = tweets[index];
-            renderTweet(tweet);
-            index -= 1;
-          }
+        <div class="box txt">
+          <div class="name-date">name<span>date</span></div>
+          <div class="tweet">Lorem ipsum dolor sit amet,sdfsdfdfsdfsdfdsfsf ddddddddddd.</div>
+        </div>
+      </div>
 
-          return setInterval(function(){
-            if(tweets.length > currentLength) {
-              renderTweet(tweets[tweets.length - 1]);
-              currentLength += 1;
-            }
-          });
-        };
+            <div class="tweet-box">
+        <div class="box pic">
+          <img src="https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth">
+        </div>
 
-        // var updateTweets = function(tweets){
-        //   var currentLength = tweets.length;
+        <div class="box txt">
+          <div class="name-date">name<span>date</span></div>
+          <div class="tweet">Lorem ipsum dolor sit amet,sdfsdfdfsdfsdfdsfsf ddddddddddd.</div>
+        </div>
+      </div>
 
+            <div class="tweet-box">
+        <div class="box pic">
+          <img src="https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth">
+        </div>
 
-        //   });
-        // }
+        <div class="box txt">
+          <div class="name-date">name<span>date</span></div>
+          <div class="tweet">Lorem ipsum dolor sit amet,sdfsdfdfsdfsdfdsfsf ddddddddddd.</div>
+        </div>
+      </div>
 
-        loadTweets(streams.home);
-        // updateTweets(streams.home);
+            <div class="tweet-box">
+        <div class="box pic">
+          <img src="https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth">
+        </div>
 
-      });
+        <div class="box txt">
+          <div class="name-date">name<span>date</span></div>
+          <div class="tweet">Lorem ipsum dolor sit amet,sdfsdfdfsdfsdfdsfsf ddddddddddd.</div>
+        </div>
+      </div>
 
-    </script>
+            <div class="tweet-box">
+        <div class="box pic">
+          <img src="https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth">
+        </div>
+
+        <div class="box txt">
+          <div class="name-date"><a href="www.google.com">name</a><span>date</span></div>
+          <div class="tweet">Lorem ipsum dolor sit amet,sdfsdfdfsdfsdfdsfsf ddddddddddd.</div>
+        </div>
+      </div>
+
+            <div class="tweet-box">
+        <div class="box pic">
+          <img src="https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth">
+        </div>
+
+        <div class="box txt">
+          <div class="name-date">name<span>date</span></div>
+          <div class="tweet">Lorem ipsum dolor sit amet,sdfsdfdfsdfsdfdsfsf ddddddddddd.</div>
+        </div>
+      </div>
+
+            <div class="tweet-box">
+        <div class="box pic">
+          <img src="https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth">
+        </div>
+
+        <div class="box txt">
+          <div class="name-date">name<span>date</span></div>
+          <div class="tweet">Lorem ipsum dolor sit amet,sdfsdfdfsdfsdfdsfsf ddddddddddd.</div>
+        </div>
+      </div>
+
+            <div class="tweet-box">
+        <div class="box pic">
+          <img src="https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth">
+        </div>
+
+        <div class="box txt">
+          <div class="name-date">name<span>date</span></div>
+          <div class="tweet">Lorem ipsum dolor sit amet,sdfsdfdfsdfsdfdsfsf ddddddddddd.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <script type="text/javascript" src="jQuery/app.js"></script>
   </body>
 </html>
