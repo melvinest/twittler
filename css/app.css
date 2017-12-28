@@ -1,31 +1,56 @@
+html, body {
+     height: 100%;
+}
+
 body {
-  background-color: #99ccff;
+  background: linear-gradient(141deg, #1dcaff 0%, #00aced 51%, #0084b4 75%);
+  /*background-color: #99ccff;*/
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
 }
 
-#container {
-  width: 75%;
-  height: 10%;
+.container {
+  width: 60%;
+  height: 600px;
   margin: 100px auto 50px auto;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 h1 {
   margin: 0 auto;
-  padding: 1.5%;
-  background-color: 
+  /*padding: 1.5%;*/
+  line-height: 70px;
+  color: white;
+  background-color: #1dcaff;
+  height: 70px;  
 }
 
-i {
+.fa-paper-plane-o {
   padding-left: 2%;
+  padding-right: 2.5%;
+}
+
+.right-icon {
+  float: right;
+  padding-right: 3%;
+  line-height: 70px;
+}
+
+.feed {
+  height: 530px;
+  overflow: scroll;
 }
 
 .tweet-box {
-  border-top: 1px solid black;
+  /*border-top: 1px solid black;*/
   height: 80px;
   padding: 1% 1%;
+}
+
+.contrast {
+  background-color: #f7f7f7;
 }
 
 /*.block {
@@ -36,8 +61,9 @@ i {
 }*/
 
 .box {
-	float: left;
+  float: left;
 }
+
 .pic {
   /*width: 50px;*/
   /*border: 1px solid rgba(0, 0, 0, 0.5);*/
@@ -65,10 +91,18 @@ i {
 }
 
 .name-date{
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
 
-.name-date span{
+.icon-hover:hover{
+  color: #c0deed;
+}
+
+.name:hover {
+  text-decoration: underline;
+}
+
+.date{
   float: right;
 
 }
