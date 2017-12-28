@@ -60,7 +60,7 @@ $(document).ready(function(){
   };
 
   var generateAllTweets = function(){
-    $('.header').text('TWITTLER FEEDS');
+    $('.header').text('TWITTLER FEED');
     return loadTweets(streams.home);
   };
 

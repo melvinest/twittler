@@ -1,5 +1,7 @@
 html, body {
      height: 100%;
+     margin: 0;
+     padding: 0;
 }
 
 body {
@@ -7,6 +9,24 @@ body {
   /*background-color: #99ccff;*/
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 70px;
+  overflow: hidden;
+  background-color: #1dcaff;
+  color: white;
+  font-size: 1.7em;
+  font-weight: bold;
+}
+
+li{
+  float: left;
+  padding: 0 1%;
+  line-height: 70px;
 }
 
 .container {
