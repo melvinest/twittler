@@ -4,7 +4,7 @@ $(document).ready(function(){
   var container = $('.container')
   // console.log($('#container'));
   // console.log($body);
-  console.log(streams.users)
+  // console.log(streams.users)
 
   var renderTweet = function(tweet){
     // var $tweet = $('<div></div>');
@@ -41,9 +41,11 @@ $(document).ready(function(){
     }
 
     $('.feed').empty();
-    $('.fa-paper-plane-o').toggleClass('icon-hover');
-    $('.right-icon').toggleClass('fa-plus');
-    $('.right-icon').toggleClass('fa-arrow-left');
+    // $('.fa-paper-plane-o').toggleClass('icon-hover');
+    // $('.right-icon').toggleClass('fa-plus');
+    // $('.right-icon').toggleClass('fa-arrow-left');
+    
+    
 
     for(var index = 0; index < currentLength; index++) {
       var tweet = tweets[index];
@@ -53,34 +55,56 @@ $(document).ready(function(){
     return setInterval(function(){
       if(tweets.length > currentLength) {
         renderTweet(tweets[tweets.length - 1]);
-        console.log(tweets)
         currentLength += 1;
       }
     });
   };
 
+  var boxTitle = $('.box-title');
+  var feed = $('.feed');
+  var arrowIcon = $('.fa-arrow-left');
+  var plusIcon = $('.fa-plus');
+
   var generateAllTweets = function(){
-    $('.header').text('TWITTLER FEED');
+    boxTitle.text('TWITTLER FEED');
+    arrowIcon.hide();
+    plusIcon.show();
     return loadTweets(streams.home);
   };
 
   var generateUserTweets = function(tweets, user){
-    $('.header').text('@' + user);
+    boxTitle.text('@' + user);
+    arrowIcon.show();
+    plusIcon.hide();
     return loadTweets(tweets);
   };
 
   currentSetInterval = generateAllTweets();
 
-  $('.feed').on('click', '.name', function(){
+  feed.on('click', '.name', function(){
     var name = $(this).text().slice(1);
     var tweets = streams.users[name];
     currentSetInterval = generateUserTweets(tweets, name);
   });
 
-  $('h1').on('click', '.fa-paper-plane-o, .fa-arrow-left', function(){
+  $('.fa-paper-plane-o, .fa-arrow-left').on('click', function(){
+    currentSetInterval = generateAllTweets();
+  });
+
+  $('i').parent().on('click', function(){
+    // $('input').toggleClass('show').slideDown('slow');
+    // $('input').toggleClass('hidden').slideDown('slow');
     currentSetInterval = generateAllTweets();
   });
   
+  plusIcon.on('click', function(){
+    // $('input').toggleClass('show').slideDown('slow');
+    // $('input').toggleClass('hidden').slideDown('slow');
+    feed.toggleClass('with-textbox');
+    $('input').slideToggle();
+    event.stopPropagation();
+  });
+
   // updateTweets(streams.home);
   // loadTweets(streams.user.shawndrost);
 

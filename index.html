@@ -4,29 +4,112 @@
     <title>TWITTLER</title>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="icon" type="image/png" href="twittler.ico">
   </head>
   <body>
     <ul>
-      <li>TWITTLER</li>
+      <li><i class="fa fa-paper-plane-o" aria-hidden="true"></i>   TWITTLER</li>
       <li>HOME</li>
       <li>PROFILE</li>
+      <li class="right-list">@jonSnow</li>
     </ul>
 
     <div class="container">
-      <h1><i class="fa fa-paper-plane-o icon-hover" aria-hidden="true"></i><span class="header">TWITTLER FEED</span><i id = "plus" class="fa fa-arrow-left icon-hover right-icon" aria-hidden="true"></i></h1>
-      <div class="feed"></div>
-      <!-- <div class="tweet-box">
+      <div class="header">
+        <div>
+          <i class="fa fa-paper-plane-o icon-hover" aria-hidden="true"></i>
+          <span class="box-title">TWITTLER FEED</span>
+          <i class="fa fa-arrow-left icon-hover right-icon" aria-hidden="true"></i>
+          <i class="fa fa-plus icon-hover right-icon" aria-hidden="true"></i>
+        </div>
+        
+        <div>
+          <!-- <form> -->
+            <!-- <textarea>What's on your mind</textarea> -->
+            <input type="text" name="new-post" placeholder="What's on your mind?">
+          <!-- </form> -->
+        </div>
+
+      </div>
+      <div class="feed">
+      <div class="tweet-box">
+        <div class="box pic">
+          <img src="https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth">
+        </div>
+
+       <!--  <div class="box txt">
+          <div class="name-date">name<span>date</span></div>
+          <div class="tweet">Lorem ipsum dolor sit amet,sdfsdfdfsdfsdfdsfsf ddddddddddd.</div>
+        </div>
+      </div><div class="tweet-box">
         <div class="box pic">
           <img src="https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth">
         </div>
 
         <div class="box txt">
           <div class="name-date">name<span>date</span></div>
-          <div class="tweet">Lorem ipsum dolor sit amet,sdfsdfdfsdfsdfdsfsf ddddddddddd.</div> -->
-        <!-- </div> -->
-      <!-- </div> -->
+          <div class="tweet">Lorem ipsum dolor sit amet,sdfsdfdfsdfsdfdsfsf ddddddddddd.</div>
+        </div>
+      </div><div class="tweet-box">
+        <div class="box pic">
+          <img src="https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth">
+        </div>
+
+        <div class="box txt">
+          <div class="name-date">name<span>date</span></div>
+          <div class="tweet">Lorem ipsum dolor sit amet,sdfsdfdfsdfsdfdsfsf ddddddddddd.</div>
+        </div>
+      </div><div class="tweet-box">
+        <div class="box pic">
+          <img src="https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth">
+        </div>
+
+        <div class="box txt">
+          <div class="name-date">name<span>date</span></div>
+          <div class="tweet">Lorem ipsum dolor sit amet,sdfsdfdfsdfsdfdsfsf ddddddddddd.</div>
+        </div>
+      </div><div class="tweet-box">
+        <div class="box pic">
+          <img src="https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth">
+        </div>
+
+        <div class="box txt">
+          <div class="name-date">name<span>date</span></div>
+          <div class="tweet">Lorem ipsum dolor sit amet,sdfsdfdfsdfsdfdsfsf ddddddddddd.</div>
+        </div>
+      </div><div class="tweet-box">
+        <div class="box pic">
+          <img src="https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth">
+        </div>
+
+        <div class="box txt">
+          <div class="name-date">name<span>date</span></div>
+          <div class="tweet">Lorem ipsum dolor sit amet,sdfsdfdfsdfsdfdsfsf ddddddddddd.</div>
+        </div>
+
+
+      </div><div class="tweet-box">
+        <div class="box pic">
+          <img src="https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth">
+        </div>
+
+        <div class="box txt">
+          <div class="name-date">name<span>date</span></div>
+          <div class="tweet">Lorem ipsum dolor sit amet,sdfsdfdfsdfsdfdsfsf ddddddddddd.</div>
+        </div>
+      </div><div class="tweet-box">
+        <div class="box pic">
+          <img src="https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth">
+        </div>
+
+        <div class="box txt">
+          <div class="name-date">name<span>date</span></div>
+          <div class="tweet">Lorem ipsum dolor sit amet,sdfsdfdfsdfsdfdsfsf ddddddddddd.</div>
+        </div>
+      </div> -->
     </div>
 
     <script src="jQuery/app.js"></script>
