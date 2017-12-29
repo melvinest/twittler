@@ -12,10 +12,17 @@ streams.users.sharksforcheap = [];
 streams.users.mracus = [];
 streams.users.douglascalhoun = [];
 window.users = Object.keys(streams.users);
+window.pics = {
+  shawndrost: "https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth",
+  sharksforcheap: "https://vetstreet.brightspotcdn.com/dims4/default/4b20efe/2147483647/crop/0x0%2B0%2B0/resize/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2Ff8%2F7a54f0a10511e087a80050568d634f%2Ffile%2FLabrador-1-645mk062111.jpg",
+  mracus: "https://www.purina.com/sites/g/files/auxxlc196/files/SPORTING_Golden-Retriever.jpg",
+  douglascalhoun: "http://cdn.akc.org/akccontentimages/BreedOfficialPortraits/hero/pembroke-welsh-corgi-hero.jpg"
+}
 
 // utility function for adding tweets to our data structures
 var addTweet = function(newTweet){
   var username = newTweet.user;
+  streams.users[username] = [];
   streams.users[username].push(newTweet);
   streams.home.push(newTweet);
 };
@@ -43,6 +50,7 @@ var generateRandomTweet = function(){
   tweet.user = randomElement(users);
   tweet.message = randomMessage();
   tweet.created_at = new Date();
+  tweet.pic = pics[tweet.user];
   addTweet(tweet);
 };
 
@@ -67,5 +75,6 @@ var writeTweet = function(message){
   var tweet = {};
   tweet.user = visitor;
   tweet.message = message;
+  tweet.created_at = new Date();
   addTweet(tweet);
 };

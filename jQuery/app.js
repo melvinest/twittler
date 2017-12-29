@@ -11,7 +11,7 @@ $(document).ready(function(){
     // console.log(tweet)
     // $tweet.text('@' + tweet.user + ': ' + tweet.message + 'sent:' + tweet.created_at);
     // $tweet.prependTo($body);
-    var profilePic = "https://cdn.thinglink.me/api/image/733026482183471105/1240/10/scaletowidth";
+    var profilePic = tweet.pic;
 
     var message = $('<div></div>').addClass('tweet').text(tweet.message);
     var nameDate = $('<div></div>').addClass('name-date')
@@ -64,6 +64,7 @@ $(document).ready(function(){
   var feed = $('.feed');
   var arrowIcon = $('.fa-arrow-left');
   var plusIcon = $('.fa-plus');
+  var inputBox = $('input');
 
   var generateAllTweets = function(){
     boxTitle.text('TWITTLER FEED');
@@ -79,6 +80,7 @@ $(document).ready(function(){
     return loadTweets(tweets);
   };
 
+  $('.right-list').text('@' + visitor);
   currentSetInterval = generateAllTweets();
 
   feed.on('click', '.name', function(){
@@ -101,9 +103,19 @@ $(document).ready(function(){
     // $('input').toggleClass('show').slideDown('slow');
     // $('input').toggleClass('hidden').slideDown('slow');
     feed.toggleClass('with-textbox');
-    $('input').slideToggle();
+    inputBox.slideToggle();
     event.stopPropagation();
   });
+
+
+  inputBox.keypress(function(key){
+    if(key.which === 13) {
+      var newTweet = $(this).val();
+      writeTweet(newTweet);
+      // clear input after posting tweet
+      inputBox.val("");
+    }
+  })
 
   // updateTweets(streams.home);
   // loadTweets(streams.user.shawndrost);
