@@ -19,10 +19,15 @@ window.pics = {
   douglascalhoun: "http://cdn.akc.org/akccontentimages/BreedOfficialPortraits/hero/pembroke-welsh-corgi-hero.jpg"
 }
 
+// visitor information
+
+var visitor = 'wakaWaka';
+pics[visitor] = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Shiba_inu_taiki.jpg/220px-Shiba_inu_taiki.jpg";
+streams.users[visitor] = [];
+
 // utility function for adding tweets to our data structures
 var addTweet = function(newTweet){
   var username = newTweet.user;
-  streams.users[username] = [];
   streams.users[username].push(newTweet);
   streams.home.push(newTweet);
 };
@@ -61,13 +66,13 @@ for(var i = 0; i < 10; i++){
 var scheduleNextTweet = function(){
   generateRandomTweet();
   setTimeout(scheduleNextTweet, Math.random() * 10000);
+  // setTimeout(scheduleNextTweet, 61000);
 };
 scheduleNextTweet();
 
 // utility function for letting students add "write a tweet" functionality
 // (note: not used by the rest of this file.)
 
-var visitor = 'jonSnow';
 var writeTweet = function(message){
   if(!visitor){
     throw new Error('set the global visitor property!');
@@ -76,5 +81,6 @@ var writeTweet = function(message){
   tweet.user = visitor;
   tweet.message = message;
   tweet.created_at = new Date();
+  tweet.pic = pics[visitor];
   addTweet(tweet);
 };
