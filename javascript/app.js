@@ -32,7 +32,6 @@ $(document).ready(function(){
     $tweetBox.hide().slideDown('slow');
   };
 
-
   // function that loops through list of tweets and assigns required data to run renderTweet
   var loadTweets = function(tweets){
     var index = tweets.length - 1;
@@ -92,10 +91,21 @@ $(document).ready(function(){
         if(Math.round(convertedTime) === 0 && conversionFactors[i][0] === 'min') {
           return [time - 0, 'a while ago'];
         }
-        return [time - 0, String(Math.round(convertedTime)) + ' ' + conversionFactors[i][0]];
+        return [time - 0, String(Math.round(convertedTime)) + ' ' + conversionFactors[i][0] + ' ago'];
       }
     }    
-  }
+  };
+
+  var gotoUserTweets = function() {
+    var name = $(this).text().slice(1);
+    var tweets = streams.users[name];
+    currentSetInterval = generateUserTweets(tweets, name);
+  };
+
+  var goToHome = function() {
+    currentSetInterval = generateAllTweets();
+    event.stopPropagation();
+  };
 
   $rightList.text('@' + visitor);
   currentSetInterval = generateAllTweets();
@@ -111,27 +121,22 @@ $(document).ready(function(){
     }
   });
 
-  $feed.on('click', '.name', function(){
-    var name = $(this).text().slice(1);
-    var tweets = streams.users[name];
-    currentSetInterval = generateUserTweets(tweets, name);
-  });
-
-  $('.fa-paper-plane-o, .fa-arrow-left').on('click', function(){
-    currentSetInterval = generateAllTweets();
-    event.stopPropagation();
-  });
-
-  $('ul').parent().on('click', 'i', function(){
-    currentSetInterval = generateAllTweets();
-  });
+  // when clicked, load all tweets
+  $('li').first().on('click', goToHome);
+  $('.fa-paper-plane-o, .fa-arrow-left').on('click', goToHome);
   
+  // when clicked, load user tweets
+  $feed.on('click', '.name', gotoUserTweets);
+  $rightList.on('click', gotoUserTweets);
+
+  // when clicked, shows the new tweet text box
   $plusIcon.on('click', function(){
     $feed.toggleClass('with-textbox');
     $inputBox.slideToggle();
     event.stopPropagation();
   });
 
+  // handler for enter to post new tweet
   $inputBox.keypress(function(key){
     if(key.which === 13) {
       var newTweet = $(this).val();
@@ -139,12 +144,6 @@ $(document).ready(function(){
       // clear input after posting tweet
       $inputBox.val('');
     }
-  });
-
-  $rightList.on('click', function(){
-    var name = $(this).text().slice(1);
-    var tweets = streams.users[name];
-    currentSetInterval = generateUserTweets(tweets, name);
   });
 
 });
